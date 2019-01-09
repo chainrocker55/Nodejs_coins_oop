@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Node js Express Tutorial</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Node js Express Tutorial
+        </h1>
+        <h2 class="subtitle">
+          2018
+        </h2>
+      </div>
+    </div>
+  </section>
+  <div class="container has-text-right">
+
+    <br>
+    <a href="http://localhost:3000/coins/create" class="button is-success is-large">Create new</a>
+    <br>
+    <div class="columns">
+      <div class="column is-4 is-offset-4">
+        <table class="table is-hoverable ">
+          <thead>
+            <tr>
+              <td><b>Coin Name</b></td>
+              <td><b>Coin Price</b></td>
+              <td colspan="2"><b>Action</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < coins.length; i++) { %>
+            <tr>
+              <td>
+                <%= coins[i].name %>
+              </td>
+              <td>
+                <%= coins[i].price %>
+              </td>
+              <td><a href="http://localhost:3000/coins/edit/<%= coins[i]._id %>" class="button is-warning is-focused">Edit</a></td>
+              <td><a href="http://localhost:3000/coins/delete/<%= coins[i]._id %>" class="button is-danger is-focused">Delete</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  </div>
+  <br>
+  <br>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="www.google.com">Kachain Jantalat</a>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
